@@ -2,6 +2,7 @@ package com.registerEventsSpringBoot.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -17,7 +18,7 @@ public class EventoController {
 	
 	@RequestMapping(value="/cadastrarEvento", method=RequestMethod.GET)
 	public String form() {
-		return "evento/formEvento";
+		return "evento/form";
 	}
 	
 	@RequestMapping(value="/cadastrarEvento", method=RequestMethod.POST)
@@ -35,4 +36,12 @@ public class EventoController {
 		mv.addObject("eventos", eventos); //enviando a lista de eventos para a view
 		return mv;
 	}
+	
+	@RequestMapping("/{codigo}")
+	public ModelAndView detalhesEvento(@PathVariable long codigo) { //@PathVariable pega o que é passado como parâmetro
+		ModelAndView mv = new ModelAndView("evento/detalhes");
+		Evento evento = er.findByCodigo(codigo);
+		mv.addObject("evento", evento);
+		return mv;
+	} 
 }

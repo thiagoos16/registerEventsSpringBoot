@@ -1,15 +1,17 @@
-<!DOCTYPE html>
+<!DOCTYPE>
 <html class="no-js" xmlns:th="http://thymeleaf.org"
 	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	
 	<head>
+		<title> Detalhes Evento </title>
 		<meta charset="utf-8">
-		<title> Register Events App </title>
 		<link rel="stylesheet" href="foundation/css/foundation.css"/>
 		<link rel="stylesheet" href="foundation/foundation-icons.css"/>
 	</head>
+	
 	<body>
-		<h1>Lista de Eventos</h1>
-		<h3> <a class="button" href="/cadastrarEvento"> <i class="fi-plus"></i> Cadastrar Evento </a> </h3>
+		<h1>Detalhes do Evento</h1>
+		<a class="button" href="/eventos"> Home </a>
 		
 		<table class="grid-container">
 			<thead>
@@ -22,9 +24,8 @@
 			</thead>
 		
 			<tbody>
-				<tr th:each="evento: ${eventos}">
-												<!--EC(iniciais do evento controlller) e o nome do método-->
-					<td><a th:href="${(#mvc.url('EC#detalhesEvento').arg(0, evento.codigo)).build()}"><span th:text="${evento.nome}"></span></a></td>
+				<tr>
+					<td><span th:text="${evento.nome}"></span></td>
 					<td><span th:text="${evento.local}"></span></td>
 					<td><span th:text="${evento.data}"></span></td>
 					<td><span th:text="${evento.horario}"></span></td>
@@ -36,4 +37,4 @@
     	<script src="foundation/js/vendor/what-input.js"></script>
     	<script src="foundation/js/vendor/foundation.min.js"></script>
 	</body>
-</hmlt>
+</html>
