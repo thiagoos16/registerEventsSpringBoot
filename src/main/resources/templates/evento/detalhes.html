@@ -51,6 +51,22 @@
 			<button class="button" type="submit">Salvar</button>
 		</form>
 		
+		<table class="grid-container">
+			<thead>
+				<tr>
+					<th>Rg</th>
+					<th>Nome</th>
+				</tr>
+			</thead>
+		
+			<tbody>
+				<tr th:each="convidado: ${convidados}">
+					<td><span th:text="${convidado.rg}"></span></td>
+					<td><span th:text="${convidado.nome}"></span></td>
+				</tr>	
+			</tbody>
+		</table>
+		
 		<script src="foundation/js/vendor/jquery.js"></script>
     	<script src="foundation/js/vendor/what-input.js"></script>
     	<script src="foundation/js/vendor/foundation.min.js"></script>
