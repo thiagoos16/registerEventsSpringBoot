@@ -1,21 +1,38 @@
 <!DOCTYPE html>
-<html xmlns:th="http://thymeleaf.org"
+<html class="no-js" xmlns:th="http://thymeleaf.org"
 	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 	<head>
 		<meta charset="utf-8">
 		<title> Register Events App </title>
+		<link rel="stylesheet" href="foundation/css/foundation.css"/>
+		<link rel="stylesheet" href="foundation/foundation-icons.css"/>
 	</head>
-	<body>
+	<body class="grid-container">
 		<h1>Lista de Eventos</h1>
-		<h3> <a href="/cadastrarEvento"> Cadastrar Evento </a> </h3>
+		<h3> <a class="button" href="/cadastrarEvento"> <i class="fi-plus"></i> Cadastrar Evento </a> </h3>
 		
-		<div th:each="evento: ${eventos}">
-			<div class="row">
-				<p><span th:text="${evento.nome}"></span></p>
-				<p><span th:text="${evento.local}"></span></p>
-				<p><span th:text="${evento.data}"></span></p>
-				<p><span th:text="${evento.horario}"></span></p>
-			</div>
-		</div>
+		<table>
+			<thead>
+				<tr>
+					<th>Nome</th>
+					<th>Local</th>
+					<th>Data</th>
+					<th>Horario</th>
+				</tr>
+			</thead>
+		
+			<tbody>
+				<tr th:each="evento: ${eventos}">
+					<td><span th:text="${evento.nome}"></span></td>
+					<td><span th:text="${evento.local}"></span></td>
+					<td><span th:text="${evento.data}"></span></td>
+					<td><span th:text="${evento.horario}"></span></td>
+				</tr>	
+			</tbody>
+		</table>
+		
+		<script src="foundation/js/vendor/jquery.js"></script>
+    	<script src="foundation/js/vendor/what-input.js"></script>
+    	<script src="foundation/js/vendor/foundation.min.js"></script>
 	</body>
 </hmlt>
