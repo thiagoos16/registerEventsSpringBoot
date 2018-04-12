@@ -1,19 +1,43 @@
 <!DOCTYPE>
-<html xmlns:th="http://thymeleaf.org"
+<html class="no-js" xmlns:th="http://thymeleaf.org"
 	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 	<head>
 		<title>EventosApp</title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="foundation/css/foundation.css"/>
+		<link rel="stylesheet" href="foundation/foundation-icons.css"/>
 	</head>
 	
-	<body>
+	<body class="grid-container">
 		<h1>Cadastro de Eventos</h1>
+		<a class="button" href="/eventos"> Home </a>
 		<form method="post">
-			Nome: <input type="text" value="" name="nome"/>
-			Local: <input type="text" value="" name="local"/>
-			Data: <input type="date" value="" name="data"/>
-			Horario: <input type="text" value="" name="horario"/>
-			
-			<button type="submit">Salvar</button>
+			<div class="grid-container">
+				<div class="grid-x grid-padding-x">
+					<div class="medium-6 cell">
+						<label>Nome 
+							<input type="text" value="" name="nome" placeholder="Nome"/>
+						</label>
+					</div>
+					<div class="medium-6 cell">
+						<label>Endereço
+							<input type="text" value="" name="local" placeholder="Endereço"/>
+						</label>
+					</div>
+				
+					<div class="medium-6 cell">
+						<label>Data
+							<input type="date" value="" name="data"/>
+						</label>
+					</div>
+					<div class="medium-6 cell">
+						<label>Horário
+							<input type="text" value="" name="horario"/>
+						</label>
+					</div>
+				</div>
+				<button class="button" type="submit">Salvar</button>
+			</div>
 		</form>
 	</body>
 	
