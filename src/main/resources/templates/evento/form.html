@@ -8,10 +8,11 @@
 		<link rel="stylesheet" href="foundation/foundation-icons.css"/>
 	</head>
 	
-	<body class="grid-container">
+	<body>
 		<h1>Cadastro de Eventos</h1>
 		<a class="button" href="/eventos"> Home </a>
-		<form method="post">
+		<form method="post" class="grid-container">
+			<th:block th:include="mensagemErro"></th:block>
 			<div class="grid-container">
 				<div class="grid-x grid-padding-x">
 					<div class="medium-6 cell">

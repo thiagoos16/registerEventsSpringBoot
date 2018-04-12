@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html class="no-js" lang="pt"
+		xmlns="http://www.w3.org/1999/xhtml" 
+		xmlns:th="http://thymeleaf.org">
+	
+	<head>
+		<link rel="stylesheet" href="foundation/css/foundation.css"/>
+		<link rel="stylesheet" href="foundation/foundation-icons.css"/>
+	</head>	
+
+	<body>	
+		<div class="callout primary" role="alert" th:if="${not #strings.isEmpty(mensagem)}">
+			<span th:text="${mensagem}"></span>
+			<button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+		
+		<script src="foundation/js/vendor/jquery.js"></script>
+    	<script src="foundation/js/vendor/what-input.js"></script>
+    	<script src="foundation/js/vendor/foundation.min.js"></script>
+	</body>						
+</html>
